@@ -136,7 +136,7 @@ def CCTPull(CountyVACOVID):
     "Edward Hines Junior Hospital", 
     "Captain James A. Lovell Federal Health Care Center", 
     "Tomah VA Medical Center"
-    ]
+    ] 
     
     for vamc in VAMCList:
         FacilityList = VAMC[VAMC.VAMC == vamc]['FIPS']
