@@ -13,7 +13,6 @@ def CCTPull(CountyVACOVID):
     USCasesToday = UScovid.loc[ UScovid.DATE == UScovid.DATE.max(),'CASES'].values[0]
     USCasesYesterday = UScovid.loc[ UScovid.DATE == UScovid.DATE.max() - pd.to_timedelta(1, unit='D'),'CASES'].values[0]
     USNewCases = USCasesToday - USCasesYesterday
-    # print(USNewCases)
     TodayDate = CountyVACOVID['DATE'][0]
     #State level Pulls
     StateDataSet = {}
@@ -145,9 +144,11 @@ def CCTPull(CountyVACOVID):
     
         ECases = FacilityData['VET_CASES'].sum()
         NewCases = ECases - FacilityData['VET_YESTER'].sum()
-        values = [ECases, NewCases]
+        TotalCases = FacilityData['CASES'].sum()
+        values = [TotalCases, ECases, NewCases]
         DataSet['%s' %vamc] = values
-    
+        # print(TotalCases)
+
     #Hard-coding for Columbus
     COFacilityList = ['39159','39097', '39129','39049','39045','39089','39041','39117'] 
     COFacilityData = CountyVACOVID[CountyVACOVID['FIPS'].isin(COFacilityList)]
@@ -235,116 +236,144 @@ def CCTPull(CountyVACOVID):
                             'MO NewVACases' : StateDataSet["Missouri"][3],
                             
                             #Anchorage (AN)
-                            'AN ECases': DataSet["Anchorage VA Medical Center"][0],
-                            'AN NewECases': DataSet["Anchorage VA Medical Center"][1],
+                            'AN TotalCases': DataSet["Anchorage VA Medical Center"][0],
+                            'AN ECases': DataSet["Anchorage VA Medical Center"][1],
+                            'AN NewECases': DataSet["Anchorage VA Medical Center"][2],
                             
                             #Portland (PO)
-                            'PO ECases': DataSet["Portland VA Medical Center"][0],
-                            'PO NewECases': DataSet["Portland VA Medical Center"][1],
+                            'PO TotalCases': DataSet["Portland VA Medical Center"][0],
+                            'PO ECases': DataSet["Portland VA Medical Center"][1],
+                            'PO NewECases': DataSet["Portland VA Medical Center"][2],
                           
                             #WCPAC (WC)
-                            'WC ECases': DataSet["North Las Vegas VA Medical Center"][0],
-                            'WC NewECases': DataSet["North Las Vegas VA Medical Center"][1],
+                            'WC TotalCases': DataSet["North Las Vegas VA Medical Center"][0],
+                            'WC ECases': DataSet["North Las Vegas VA Medical Center"][1],
+                            'WC NewECases': DataSet["North Las Vegas VA Medical Center"][2],
                       
                             #Walla Walla (WW)
-                            'WW ECases': DataSet["Jonathan M. Wainwright Memorial VA Medical Center"][0],
-                            'WW NewECases': DataSet["Jonathan M. Wainwright Memorial VA Medical Center"][1],
+                            'WW TotalCases': DataSet["Jonathan M. Wainwright Memorial VA Medical Center"][0],
+                            'WW ECases': DataSet["Jonathan M. Wainwright Memorial VA Medical Center"][1],
+                            'WW NewECases': DataSet["Jonathan M. Wainwright Memorial VA Medical Center"][2],
                            
                             #White City (WH)
-                            'WH ECases': DataSet["White City VA Medical Center"][0],
-                            'WH NewECases': DataSet["White City VA Medical Center"][1],
+                            'WH TotalCases': DataSet["White City VA Medical Center"][0],
+                            'WH ECases': DataSet["White City VA Medical Center"][1],
+                            'WH NewECases': DataSet["White City VA Medical Center"][2],
                   
                             #Roseburg (RO)
-                            'RO ECases': DataSet["Roseburg VA Medical Center"][0],
-                            'RO NewECases': DataSet["Roseburg VA Medical Center"][1],
+                            'RO TotalCases': DataSet["Roseburg VA Medical Center"][0],
+                            'RO ECases': DataSet["Roseburg VA Medical Center"][1],
+                            'RO NewECases': DataSet["Roseburg VA Medical Center"][2],
                 
                             #Puget Sound (PS)
-                            'PS ECases': DataSet["Seattle VA Medical Center"][0],
-                            'PS NewECases': DataSet["Seattle VA Medical Center"][1],
+                            'PS TotalCases': DataSet["Seattle VA Medical Center"][0],
+                            'PS ECases': DataSet["Seattle VA Medical Center"][1],
+                            'PS NewECases': DataSet["Seattle VA Medical Center"][2],
                 
                             #Mann-Grandstaff (MG)
-                            'MG ECases': DataSet["Mann-Grandstaff Department of Veterans Affairs Medical Center"][0],
-                            'MG NewECases': DataSet["Mann-Grandstaff Department of Veterans Affairs Medical Center"][1],
+                            'MG TotalCases': DataSet["Mann-Grandstaff Department of Veterans Affairs Medical Center"][0],
+                            'MG ECases': DataSet["Mann-Grandstaff Department of Veterans Affairs Medical Center"][1],
+                            'MG NewECases': DataSet["Mann-Grandstaff Department of Veterans Affairs Medical Center"][2],
                   
                             #Boise (BO)
-                            'BO ECases': DataSet["Boise VA Medical Center"][0],
-                            'BO NewECases': DataSet["Boise VA Medical Center"][1],
+                            'BO TotalCases': DataSet["Boise VA Medical Center"][0],
+                            'BO ECases': DataSet["Boise VA Medical Center"][1],
+                            'BO NewECases': DataSet["Boise VA Medical Center"][2],
                       
                             #Jesse Brown (JE)
-                            'JE ECases': DataSet["Jesse Brown Department of Veterans Affairs Medical Center"][0],
-                            'JE NewECases': DataSet["Jesse Brown Department of Veterans Affairs Medical Center"][1],
+                            'JE TotalCases': DataSet["Jesse Brown Department of Veterans Affairs Medical Center"][0],
+                            'JE ECases': DataSet["Jesse Brown Department of Veterans Affairs Medical Center"][1],
+                            'JE NewECases': DataSet["Jesse Brown Department of Veterans Affairs Medical Center"][2],
                           
                             #William S. Middleton Memorial (WM)
-                            'WM ECases': DataSet['William S. Middleton Memorial Veterans\' Hospital'][0],
-                            'WM NewECases': DataSet['William S. Middleton Memorial Veterans\' Hospital'][1],
+                            'WM TotalCases': DataSet['William S. Middleton Memorial Veterans\' Hospital'][0],
+                            'WM ECases': DataSet['William S. Middleton Memorial Veterans\' Hospital'][1],
+                            'WM NewECases': DataSet['William S. Middleton Memorial Veterans\' Hospital'][2],
                            
                             #Clement J. Zablocki (CZ)
-                            'CZ ECases': DataSet['Clement J. Zablocki Veterans\' Administration Medical Center'][0],
-                            'CZ NewECases': DataSet['Clement J. Zablocki Veterans\' Administration Medical Center'][1],
+                            'CZ TotalCases': DataSet['Clement J. Zablocki Veterans\' Administration Medical Center'][0],
+                            'CZ ECases': DataSet['Clement J. Zablocki Veterans\' Administration Medical Center'][1],
+                            'CZ NewECases': DataSet['Clement J. Zablocki Veterans\' Administration Medical Center'][2],
                  
                             #Oscar G. Johnson (OJ)
-                            'OJ ECases': DataSet["Oscar G. Johnson Department of Veterans Affairs Medical Facility"][0],
-                            'OJ NewECases': DataSet["Oscar G. Johnson Department of Veterans Affairs Medical Facility"][1],
+                            'OJ TotalCases': DataSet["Oscar G. Johnson Department of Veterans Affairs Medical Facility"][0],
+                            'OJ ECases': DataSet["Oscar G. Johnson Department of Veterans Affairs Medical Facility"][1],
+                            'OJ NewECases': DataSet["Oscar G. Johnson Department of Veterans Affairs Medical Facility"][2],
                 
                             #Ann Arbor (AA)
-                            'AA ECases': DataSet["Lieutenant Colonel Charles S. Kettles VA Medical Center"][0],
-                            'AA NewECases': DataSet["Lieutenant Colonel Charles S. Kettles VA Medical Center"][1],
+                            'AA TotalCases': DataSet["Lieutenant Colonel Charles S. Kettles VA Medical Center"][0],
+                            'AA ECases': DataSet["Lieutenant Colonel Charles S. Kettles VA Medical Center"][1],
+                            'AA NewECases': DataSet["Lieutenant Colonel Charles S. Kettles VA Medical Center"][2],
                       
                             #Battle Creek (BC)
-                            'BC ECases': DataSet["Battle Creek VA Medical Center"][0],
-                            'BC NewECases': DataSet["Battle Creek VA Medical Center"][1],
+                            'BC TotalCases': DataSet["Battle Creek VA Medical Center"][0],
+                            'BC ECases': DataSet["Battle Creek VA Medical Center"][1],
+                            'BC NewECases': DataSet["Battle Creek VA Medical Center"][2],
                  
                             #Detroit (DE)
-                            'DE ECases': DataSet["John D. Dingell Department of Veterans Affairs Medical Center"][0],
-                            'DE NewECases': DataSet["John D. Dingell Department of Veterans Affairs Medical Center"][1],
+                            'DE TotalCases': DataSet["John D. Dingell Department of Veterans Affairs Medical Center"][0],
+                            'DE ECases': DataSet["John D. Dingell Department of Veterans Affairs Medical Center"][1],
+                            'DE NewECases': DataSet["John D. Dingell Department of Veterans Affairs Medical Center"][2],
                             
                             #Saginaw (SA)
-                            'SA ECases' : DataSet["Aleda E. Lutz Department of Veterans Affairs Medical Center"][0], 
-                            'SA NewECases' : DataSet["Aleda E. Lutz Department of Veterans Affairs Medical Center"][1], 
+                            'SA TotalCases' : DataSet["Aleda E. Lutz Department of Veterans Affairs Medical Center"][0], 
+                            'SA ECases' : DataSet["Aleda E. Lutz Department of Veterans Affairs Medical Center"][1], 
+                            'SA NewECases' : DataSet["Aleda E. Lutz Department of Veterans Affairs Medical Center"][2], 
                             
                             #Fort Wayne (FW)
-                            'FW ECases' : DataSet["Fort Wayne VA Medical Center"][0], 
-                            'FW NewECases' : DataSet["Fort Wayne VA Medical Center"][1],
+                            'FW TotalCases' : DataSet["Fort Wayne VA Medical Center"][0], 
+                            'FW ECases' : DataSet["Fort Wayne VA Medical Center"][1], 
+                            'FW NewECases' : DataSet["Fort Wayne VA Medical Center"][2],
 
                             #Marion (MA)
-                            'MA ECases' : DataSet["Marion VA Medical Center"][0], 
-                            'MA NewECases' : DataSet["Marion VA Medical Center"][1], 
+                            'MA TotalCases' : DataSet["Marion VA Medical Center"][0], 
+                            'MA ECases' : DataSet["Marion VA Medical Center"][1], 
+                            'MA NewECases' : DataSet["Marion VA Medical Center"][2], 
 
                             #Indianapolis (IN)
-                            'IN ECases' : DataSet["Richard L. Roudebush Veterans\' Administration Medical Center"][0], 
-                            'IN NewECases' : DataSet["Richard L. Roudebush Veterans\' Administration Medical Center"][1],
+                            'IN TotalCases' : DataSet["Richard L. Roudebush Veterans\' Administration Medical Center"][0], 
+                            'IN ECases' : DataSet["Richard L. Roudebush Veterans\' Administration Medical Center"][1], 
+                            'IN NewECases' : DataSet["Richard L. Roudebush Veterans\' Administration Medical Center"][2],
 
                             #Chillicothe (CH)
-                            'CH ECases' : DataSet["Chillicothe VA Medical Center"][0],
-                            'CH NewECases' : DataSet["Chillicothe VA Medical Center"][1],
+                            'CH TotalCases' : DataSet["Chillicothe VA Medical Center"][0],
+                            'CH ECases' : DataSet["Chillicothe VA Medical Center"][1],
+                            'CH NewECases' : DataSet["Chillicothe VA Medical Center"][2],
                             
                             #Cincinnati (CN)
-                            'CN ECases' : DataSet["Cincinnati VA Medical Center"][0],
-                            'CN NewECases' : DataSet["Cincinnati VA Medical Center"][1],
+                            'CN TotalCases' : DataSet["Cincinnati VA Medical Center"][0],
+                            'CN ECases' : DataSet["Cincinnati VA Medical Center"][1],
+                            'CN NewECases' : DataSet["Cincinnati VA Medical Center"][2],
 
                             #Cleveland (CL)
-                            'CL ECases' : DataSet["Louis Stokes Cleveland Department of Veterans Affairs Medical Center"][0], 
-                            'CL NewECases' : DataSet["Louis Stokes Cleveland Department of Veterans Affairs Medical Center"][1],
+                            'CL TotalCases' : DataSet["Louis Stokes Cleveland Department of Veterans Affairs Medical Center"][0], 
+                            'CL ECases' : DataSet["Louis Stokes Cleveland Department of Veterans Affairs Medical Center"][1], 
+                            'CL NewECases' : DataSet["Louis Stokes Cleveland Department of Veterans Affairs Medical Center"][2],
                             
                             #Dayton (DA)
-                            'DA ECases' : DataSet["Dayton VA Medical Center"][0],
-                            'DA NewECases' : DataSet["Dayton VA Medical Center"][1],
+                            'DA TotalCases' : DataSet["Dayton VA Medical Center"][0],
+                            'DA ECases' : DataSet["Dayton VA Medical Center"][1],
+                            'DA NewECases' : DataSet["Dayton VA Medical Center"][2],
                             
                             #Danville (DN)
-                            'DN ECases' : DataSet["Danville VA Medical Center"][0], 
-                            'DN NewECases' : DataSet["Danville VA Medical Center"][1], 
+                            'DN TotalCases' : DataSet["Danville VA Medical Center"][0], 
+                            'DN ECases' : DataSet["Danville VA Medical Center"][1], 
+                            'DN NewECases' : DataSet["Danville VA Medical Center"][2], 
                             
                             #Hines (HN)
-                            'HN ECases' : DataSet["Edward Hines Junior Hospital"][0], 
-                            'HN NewECases' : DataSet["Edward Hines Junior Hospital"][1], 
+                            'HN TotalCases' : DataSet["Edward Hines Junior Hospital"][0], 
+                            'HN ECases' : DataSet["Edward Hines Junior Hospital"][1], 
+                            'HN NewECases' : DataSet["Edward Hines Junior Hospital"][2], 
                             
                             #North Chicago (NC)
-                            'NC ECases' : DataSet["Captain James A. Lovell Federal Health Care Center"][0], 
-                            'NC NewECases' : DataSet["Captain James A. Lovell Federal Health Care Center"][1], 
+                            'NC TotalCases' : DataSet["Captain James A. Lovell Federal Health Care Center"][0], 
+                            'NC ECases' : DataSet["Captain James A. Lovell Federal Health Care Center"][1], 
+                            'NC NewECases' : DataSet["Captain James A. Lovell Federal Health Care Center"][2], 
                             
                             #Tomah (TO)
-                            'TO ECases' : DataSet["Tomah VA Medical Center"][0],
-                            'TO NewECases' : DataSet["Tomah VA Medical Center"][1],
+                            'TO TotalCases' : DataSet["Tomah VA Medical Center"][0],
+                            'TO ECases' : DataSet["Tomah VA Medical Center"][1],
+                            'TO NewECases' : DataSet["Tomah VA Medical Center"][2],
                             
                             #Columbus (CO) (Hard-Coded)
                             'CO ECases' : DataSet["Columbus VA Medical Center"][0],
