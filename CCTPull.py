@@ -1,5 +1,5 @@
 import pandas as pd 
-import numpy as np
+import numpy as np 
 
 def CCTPull(CountyVACOVID):
     VAMC = pd.read_csv('data_folder/CleanVAMC.csv',dtype={'VISN':'int','VAMC':'str','FIPS':'str','COUNTY':'str','STATE':'str'})
