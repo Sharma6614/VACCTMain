@@ -154,10 +154,12 @@ def CCTPull(CountyVACOVID):
     COFacilityList = ['39159','39097', '39129','39049','39045','39089','39041','39117'] 
     COFacilityData = CountyVACOVID[CountyVACOVID['FIPS'].isin(COFacilityList)]
 
+    COTotalSumCases = FacilityData['CASES'].sum()
+    CONewSumCases = COTotalSumCases - FacilityData['YESTER_CASES'].sum()
     COECases = COFacilityData['VET_CASES'].sum()
     CONewCases = COECases - COFacilityData['VET_YESTER'].sum()
 
-    COValues = [COECases, CONewCases]
+    COValues = [COTotalSumCases,CONewSumCases,COECases, CONewCases]
     DataSet["Columbus VA Medical Center"] = COValues
 
 
@@ -405,8 +407,11 @@ def CCTPull(CountyVACOVID):
                             'TO NewECases' : DataSet["Tomah VA Medical Center"][3],
                             
                             #Columbus (CO) (Hard-Coded)
-                            'CO ECases' : DataSet["Columbus VA Medical Center"][0],
-                            'CO NewECases' : DataSet["Columbus VA Medical Center"][1]}, index=[0])
+
+                            'CO TotalSumCases' : DataSet["Columbus VA Medical Center"][0],
+                            'CO NewSumCases' : DataSet["Columbus VA Medical Center"][1],
+                            'CO ECases' : DataSet["Columbus VA Medical Center"][2],
+                            'CO NewECases' : DataSet["Columbus VA Medical Center"][3]}, index=[0])
 
     CCTVAChart = pd.concat([CCTVAChart_newrow, CCTVAChart]).reset_index(drop=True).drop_duplicates(subset='DATE',keep='first').round(2)
     CCTVAChart = CCTVAChart.set_index('DATE').T.reset_index()
