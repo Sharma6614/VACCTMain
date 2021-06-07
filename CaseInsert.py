@@ -13,7 +13,7 @@ covid = covid.rename(columns={'date':'DATE','fips':'FIPS','county':'COUNTY','sta
 
 #Creation of 2 dataframes isolating the latest days-worth of COVID-19 data by county and the day prior
 covid_today = covid[covid['DATE'] == covid['DATE'].max()].reset_index(drop=True)
-covid_yesterday = covid[covid['DATE'] == covid['DATE'].max()- pd.to_timedelta(1, unit='D')].reset_index(drop=True)
+covid_yesterday = covid[covid['DATE'] == covid['DATE'].max()- pd.to_timedelta(1, unit='D')].reset_index(drop=True) 
 
 AGKEY = ['FIPS','STATE']
 
