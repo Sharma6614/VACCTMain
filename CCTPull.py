@@ -259,6 +259,13 @@ def CCTPull(CountyVACOVID):
                             #Walla Walla (WW)
                             'Jonathan M. VAMC TotalSumCases': DataSet["Jonathan M. Wainwright Memorial VA Medical Center"][0],
                             'Jonathan M. VAMC NewSumCases': DataSet["Jonathan M. Wainwright Memorial VA Medical Center"][1],
+                            'Jonathan M. VAMC ECases': DataSet["Jonathan M. Wainwright Memorial VA Medical Center"][2],
+                            'Jonathan M. VAMC NewECases': DataSet["Jonathan M. Wainwright Memorial VA Medical Center"][3],
+
+
+                            #White City
+                            'White City VAMC TotalSumCases': DataSet["White City VA Medical Center"][0],
+                            'White City VAMC NewSumCases': DataSet["White City VA Medical Center"][1],
                             'White City VAMC ECases': DataSet["White City VA Medical Center"][2],
                             'White City VAMC NewECases': DataSet["White City VA Medical Center"][3],
                   
