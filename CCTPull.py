@@ -106,6 +106,21 @@ def CCTPull(CountyVACOVID):
     VISN20Cases = VISN20Data['CASES'].sum()
     VISN20_VACases = VISN20Data['VET_CASES'].sum()
 
+    #VISN 15 level Pulls
+    VISN15List = VAMC[VAMC.VISN == 15]['FIPS']
+    VISN15Data = CountyVACOVID[CountyVACOVID['FIPS'].isin(VISN15List)]
+
+    VISN15Cases = VISN15Data['CASES'].sum()
+    VISN15_VACases = VISN15Data['VET_CASES'].sum()
+
+    #VISN 23 level Pulls
+    VISN23List = VAMC[VAMC.VISN == 23]['FIPS']
+    VISN23Data = CountyVACOVID[CountyVACOVID['FIPS'].isin(VISN23List)]
+
+    VISN23Cases = VISN23Data['CASES'].sum()
+    VISN23_VACases = VISN23Data['VET_CASES'].sum()
+
+
     #Facility level Pulls
     DataSet ={}
     VAMCList = [ "Anchorage VA Medical Center", 
@@ -135,7 +150,8 @@ def CCTPull(CountyVACOVID):
     "Danville VA Medical Center", 
     "Edward Hines Junior Hospital", 
     "Captain James A. Lovell Federal Health Care Center", 
-    "Tomah VA Medical Center"
+    "Tomah VA Medical Center",
+    "Colmery-O'Neil Veterans' Administration Medical Center",
     ] 
     
     for vamc in VAMCList:
@@ -173,6 +189,8 @@ def CCTPull(CountyVACOVID):
                             'VISN10 Cases': VISN10Cases,
                             'VISN12 Cases': VISN12Cases,
                             'VISN20 Cases': VISN20Cases,
+                            'VISN15 Cases': VISN15Cases,
+                            'VISN23 Cases': VISN23Cases,
 
                             'OH Cases': StateDataSet["Ohio"][0],
                             'OH NewCases' : StateDataSet["Ohio"][1],
@@ -207,6 +225,8 @@ def CCTPull(CountyVACOVID):
                             'VISN10 VACases': VISN10_VACases,
                             'VISN12 VACases': VISN12_VACases,
                             'VISN20 VACases': VISN20_VACases,
+                            'VISN15 VACases': VISN15_VACases,
+                            'VISN23 VACases': VISN23_VACases,
                             
                             'OH VACases': StateDataSet["Ohio"][2],
                             'OH NewVACases' : StateDataSet["Ohio"][3],
@@ -412,7 +432,16 @@ def CCTPull(CountyVACOVID):
                             'Columbus VAMC TotalSumCases' : DataSet["Columbus VA Medical Center"][0],
                             'Columbus VAMC NewSumCases' : DataSet["Columbus VA Medical Center"][1],
                             'Columbus VAMC ECases' : DataSet["Columbus VA Medical Center"][2],
-                            'Columbus VAMC NewECases' : DataSet["Columbus VA Medical Center"][3]}, index=[0])
+                            'Columbus VAMC NewECases' : DataSet["Columbus VA Medical Center"][3],
+
+                            #Colmery
+                            'Colmery VAMC TotalSumCases' : DataSet["Colmery-O'Neil Veterans' Administration Medical Center"][0],
+                            'Colmery VAMC NewSumCases' : DataSet["Colmery-O'Neil Veterans' Administration Medical Center"][1],
+                            'Colmery VAMC ECases' : DataSet["Colmery-O'Neil Veterans' Administration Medical Center"][2],
+                            'Colmery VAMC NewECases' : DataSet["Colmery-O'Neil Veterans' Administration Medical Center"][3],
+                            }, index=[0])
+
+
 
     CCTVAChart = pd.concat([CCTVAChart_newrow, CCTVAChart]).reset_index(drop=True).drop_duplicates(subset='DATE',keep='first').round(2)
     CCTVAChart = CCTVAChart.set_index('DATE').T.reset_index()
