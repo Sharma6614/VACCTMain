@@ -152,6 +152,23 @@ def CCTPull(CountyVACOVID):
     "Captain James A. Lovell Federal Health Care Center", 
     "Tomah VA Medical Center",
     "Colmery-O'Neil Veterans' Administration Medical Center",
+    "Dwight D. Eisenhower Department of Veterans Affairs Medical Center",
+    "Robert J. Dole Department of Veterans Affairs Medical and Regional Office Center",
+    "Harry S. Truman Memorial Veterans' Hospital",
+    "John J. Cochran Veterans Hospital",
+    "John J. Pershing Veterans' Administration Medical Center",
+    "Kansas City VA Medical Center",
+    "St. Louis VA Medical Center-Jefferson Barracks",
+    "Des Moines VA Medical Center",
+    "Iowa City VA Medical Center",
+    "Minneapolis VA Medical Center",
+    "St. Cloud VA Medical Center",
+    "Fargo VA Medical Center",
+    "Grand Island VA Medical Center",
+    "Omaha VA Medical Center",
+    "Fort Meade VA Medical Center",
+    "Hot Springs VA Medical Center",
+    "Royal C. Johnson Veterans' Memorial Hospital",
     ] 
     
     for vamc in VAMCList:
@@ -439,6 +456,108 @@ def CCTPull(CountyVACOVID):
                             'Colmery VAMC NewSumCases' : DataSet["Colmery-O'Neil Veterans' Administration Medical Center"][1],
                             'Colmery VAMC ECases' : DataSet["Colmery-O'Neil Veterans' Administration Medical Center"][2],
                             'Colmery VAMC NewECases' : DataSet["Colmery-O'Neil Veterans' Administration Medical Center"][3],
+
+                            #Dwight
+                            'Dwight D. Eisenhower VAMC TotalSumCases' : DataSet["Dwight D. Eisenhower Department of Veterans Affairs Medical Center"][0],
+                            'Dwight D. Eisenhower VAMC NewSumCases' : DataSet["Dwight D. Eisenhower Department of Veterans Affairs Medical Center"][1],
+                            'Dwight D. Eisenhower VAMC ECases' : DataSet["Dwight D. Eisenhower Department of Veterans Affairs Medical Center"][2],
+                            'Dwight D. Eisenhower VAMC NewECases' : DataSet["Dwight D. Eisenhower Department of Veterans Affairs Medical Center"][3],
+
+                            #Robert J. 
+                            'Robert J.  VAMC TotalSumCases' : DataSet["Robert J. Dole Department of Veterans Affairs Medical and Regional Office Center"][0],
+                            'Robert J.  VAMC NewSumCases' : DataSet["Robert J. Dole Department of Veterans Affairs Medical and Regional Office Center"][1],
+                            'Robert J.  VAMC ECases' : DataSet["Robert J. Dole Department of Veterans Affairs Medical and Regional Office Center"][2],
+                            'Robert J.  VAMC NewECases' : DataSet["Robert J. Dole Department of Veterans Affairs Medical and Regional Office Center"][3],
+                            
+                            #Harry S. Truman 
+                            'Harry S. Truman  VAMC TotalSumCases' : DataSet["Harry S. Truman Memorial Veterans' Hospital"][0],
+                            'Harry S. Truman  VAMC NewSumCases' : DataSet["Harry S. Truman Memorial Veterans' Hospital"][1],
+                            'Harry S. Truman  VAMC ECases' : DataSet["Harry S. Truman Memorial Veterans' Hospital"][2],
+                            'Harry S. Truman  VAMC NewECases' : DataSet["Harry S. Truman Memorial Veterans' Hospital"][3],
+
+                            #John J. Cochran 
+                            'John J. Cochran  VAMC TotalSumCases' : DataSet["John J. Cochran Veterans Hospital"][0],
+                            'John J. Cochran  VAMC NewSumCases' : DataSet["John J. Cochran Veterans Hospital"][1],
+                            'John J. Cochran  VAMC ECases' : DataSet["John J. Cochran Veterans Hospital"][2],
+                            'John J. Cochran  VAMC NewECases' : DataSet["John J. Cochran Veterans Hospital"][3],
+
+                            #John J. Pershing 
+                            'John J. Pershing  VAMC TotalSumCases' : DataSet["John J. Pershing Veterans' Administration Medical Center"][0],
+                            'John J. Pershing  VAMC NewSumCases' : DataSet["John J. Pershing Veterans' Administration Medical Center"][1],
+                            'John J. Pershing  VAMC ECases' : DataSet["John J. Pershing Veterans' Administration Medical Center"][2],
+                            'John J. Pershing  VAMC NewECases' : DataSet["John J. Pershing Veterans' Administration Medical Center"][3],
+                            
+                            #Kansas City 
+                            'Kansas City  VAMC TotalSumCases' : DataSet["Kansas City VA Medical Center"][0],
+                            'Kansas City  VAMC NewSumCases' : DataSet["Kansas City VA Medical Center"][1],
+                            'Kansas City  VAMC ECases' : DataSet["Kansas City VA Medical Center"][2],
+                            'Kansas City  VAMC NewECases' : DataSet["Kansas City VA Medical Center"][3],
+
+                            #St. Louis
+                            'St. Louis VAMC TotalSumCases' : DataSet["St. Louis VA Medical Center-Jefferson Barracks"][0],
+                            'St. Louis VAMC NewSumCases' : DataSet["St. Louis VA Medical Center-Jefferson Barracks"][1],
+                            'St. Louis VAMC ECases' : DataSet["St. Louis VA Medical Center-Jefferson Barracks"][2],
+                            'St. Louis VAMC NewECases' : DataSet["St. Louis VA Medical Center-Jefferson Barracks"][3],
+
+                            #Des Moines
+                            'Des Moines VAMC TotalSumCases' : DataSet["Des Moines VA Medical Center"][0],
+                            'Des Moines VAMC NewSumCases' : DataSet["Des Moines VA Medical Center"][1],
+                            'Des Moines VAMC ECases' : DataSet["Des Moines VA Medical Center"][2],
+                            'Des Moines VAMC NewECases' : DataSet["Des Moines VA Medical Center"][3],
+
+                            #Iowa City
+                            'Iowa City VAMC TotalSumCases' : DataSet["Iowa City VA Medical Center"][0],
+                            'Iowa City VAMC NewSumCases' : DataSet["Iowa City VA Medical Center"][1],
+                            'Iowa City VAMC ECases' : DataSet["Iowa City VA Medical Center"][2],
+                            'Iowa City VAMC NewECases' : DataSet["Iowa City VA Medical Center"][3],
+
+                            #Minneapolis
+                            'Minneapolis VAMC TotalSumCases' : DataSet["Minneapolis VA Medical Center"][0],
+                            'Minneapolis VAMC NewSumCases' : DataSet["Minneapolis VA Medical Center"][1],
+                            'Minneapolis VAMC ECases' : DataSet["Minneapolis VA Medical Center"][2],
+                            'Minneapolis VAMC NewECases' : DataSet["Minneapolis VA Medical Center"][3],
+
+                            #St. Cloud
+                            'St. Cloud VAMC TotalSumCases' : DataSet["St. Cloud VA Medical Center"][0],
+                            'St. Cloud VAMC NewSumCases' : DataSet["St. Cloud VA Medical Center"][1],
+                            'St. Cloud VAMC ECases' : DataSet["St. Cloud VA Medical Center"][2],
+                            'St. Cloud VAMC NewECases' : DataSet["St. Cloud VA Medical Center"][3],
+
+                            #Fargo
+                            'Fargo VAMC TotalSumCases' : DataSet["Fargo VA Medical Center"][0],
+                            'Fargo VAMC NewSumCases' : DataSet["Fargo VA Medical Center"][1],
+                            'Fargo VAMC ECases' : DataSet["Fargo VA Medical Center"][2],
+                            'Fargo VAMC NewECases' : DataSet["Fargo VA Medical Center"][3],
+
+                            #Grand Island
+                            'Grand Island VAMC TotalSumCases' : DataSet["Grand Island VA Medical Center"][0],
+                            'Grand Island VAMC NewSumCases' : DataSet["Grand Island VA Medical Center"][1],
+                            'Grand Island VAMC ECases' : DataSet["Grand Island VA Medical Center"][2],
+                            'Grand Island VAMC NewECases' : DataSet["Grand Island VA Medical Center"][3],
+
+                            #Omaha
+                            'Omaha VAMC TotalSumCases' : DataSet["Omaha VA Medical Center"][0],
+                            'Omaha VAMC NewSumCases' : DataSet["Omaha VA Medical Center"][1],
+                            'Omaha VAMC ECases' : DataSet["Omaha VA Medical Center"][2],
+                            'Omaha VAMC NewECases' : DataSet["Omaha VA Medical Center"][3],
+
+                            #Fort Meade
+                            'Fort Meade VAMC TotalSumCases' : DataSet["Fort Meade VA Medical Center"][0],
+                            'Fort Meade VAMC NewSumCases' : DataSet["Fort Meade VA Medical Center"][1],
+                            'Fort Meade VAMC ECases' : DataSet["Fort Meade VA Medical Center"][2],
+                            'Fort Meade VAMC NewECases' : DataSet["Fort Meade VA Medical Center"][3],
+
+                            #Hot Springs
+                            'Hot Springs VAMC TotalSumCases' : DataSet["Hot Springs VA Medical Center"][0],
+                            'Hot Springs VAMC NewSumCases' : DataSet["Hot Springs VA Medical Center"][1],
+                            'Hot Springs VAMC ECases' : DataSet["Hot Springs VA Medical Center"][2],
+                            'Hot Springs VAMC NewECases' : DataSet["Hot Springs VA Medical Center"][3],
+
+                            #Royal C. Johnson
+                            'Royal C. Johnson VAMC TotalSumCases' : DataSet["Royal C. Johnson Veterans' Memorial Hospital"][0],
+                            'Royal C. Johnson VAMC NewSumCases' : DataSet["Royal C. Johnson Veterans' Memorial Hospital"][1],
+                            'Royal C. Johnson VAMC ECases' : DataSet["Royal C. Johnson Veterans' Memorial Hospital"][2],
+                            'Royal C. Johnson VAMC NewECases' : DataSet["Royal C. Johnson Veterans' Memorial Hospital"][3],
                             }, index=[0])
 
 
