@@ -552,6 +552,6 @@ def CCTPull(CountyVACOVID):
 
 
 
-    CCTVAChart = pd.concat([CCTVAChart_newrow, CCTVAChart]).reset_index(drop=True).drop_duplicates(subset='DATE',keep='first').round(2).astype(str) + ','
+    CCTVAChart = pd.concat([CCTVAChart_newrow, CCTVAChart]).reset_index(drop=True).drop_duplicates(subset='DATE',keep='first').round(2)
     CCTVAChart = CCTVAChart.set_index('DATE').T.reset_index()
     CCTVAChart.to_csv('CCTVAChart2.csv',index=False) 
