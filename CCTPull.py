@@ -174,18 +174,6 @@ def CCTPull(CountyVACOVID):
                             'VISN15 Cases': VISN15Cases,
                             'VISN23 Cases': VISN23Cases,
 
-                            'OH Cases': StateDataSet["Ohio"][0],
-                            'OH NewCases' : StateDataSet["Ohio"][1],
-                            'IN Cases': StateDataSet["Indiana"][0],
-                            'IN NewCases' : StateDataSet["Indiana"][1],
-                            'MI Cases': StateDataSet["Michigan"][0],
-                            'MI NewCases' : StateDataSet["Michigan"][1],
-                            
-                            'IL Cases': StateDataSet["Illinois"][0],
-                            'IL NewCases' : StateDataSet["Illinois"][1],
-                            'WI Cases': StateDataSet["Wisconsin"][0],
-                            'WI NewCases' : StateDataSet["Wisconsin"][1],
-                            
                             'WA Cases': StateDataSet["Washington"][0],
                             'WA NewCases' : StateDataSet["Washington"][1],
                             'OR Cases': StateDataSet["Oregon"][0],
@@ -194,13 +182,24 @@ def CCTPull(CountyVACOVID):
                             'ID NewCases' : StateDataSet["Idaho"][1],
                             'AK Cases': StateDataSet["Alaska"][0],
                             'AK NewCases': StateDataSet["Alaska"][1],
+                            'MI Cases': StateDataSet["Michigan"][0],
+                            'MI NewCases' : StateDataSet["Michigan"][1],
+                            'OH Cases': StateDataSet["Ohio"][0],
+                            'OH NewCases' : StateDataSet["Ohio"][1],
+                            'IN Cases': StateDataSet["Indiana"][0],
+                            'IN NewCases' : StateDataSet["Indiana"][1],
+                            'WI Cases': StateDataSet["Wisconsin"][0],
+                            'WI NewCases' : StateDataSet["Wisconsin"][1],                              
+                            'IL Cases': StateDataSet["Illinois"][0],
+                            'IL NewCases' : StateDataSet["Illinois"][1],
+                            'DC Cases': StateDataSet["District of Columbia"][0],
+                            'DC NewCases' : StateDataSet["District of Columbia"][1],                                                     
 
                             'MD Cases': StateDataSet["Maryland"][0],
                             'MD NewCases' : StateDataSet["Maryland"][1],
                             'VA Cases': StateDataSet["Virginia"][0],
                             'VA NewCases' : StateDataSet["Virginia"][1],
-                            'DC Cases': StateDataSet["District of Columbia"][0],
-                            'DC NewCases' : StateDataSet["District of Columbia"][1],
+                           
                             'MO Cases': StateDataSet["Missouri"][0],
                             'MO NewCases' : StateDataSet["Missouri"][1],
                             'KS Cases': StateDataSet["Kansas"][0],
@@ -264,115 +263,92 @@ def CCTPull(CountyVACOVID):
                             'NE NewVACases' : StateDataSet["Nebraska"][3],
                             'SD VACases': StateDataSet["South Dakota"][2],
                             'SD NewVACases' : StateDataSet["South Dakota"][3],
-                            
+
+
+
+                             #WCPAC (WC)
+                            'Las Vegas VAMC TotalSumCases': DataSet["North Las Vegas VA Medical Center"][0],
+                            'Las Vegas VAMC NewSumCases': DataSet["North Las Vegas VA Medical Center"][1],
+                            'Las Vegas VAMC ECases': DataSet["North Las Vegas VA Medical Center"][2],
+                            'Las Vegas VAMC NewECases': DataSet["North Las Vegas VA Medical Center"][3],
+
                             #Anchorage (AN)
                             'Anchorage VAMC TotalSumCases': DataSet["Anchorage VA Medical Center"][0],
                             'Anchorage VAMC NewSumCases': DataSet["Anchorage VA Medical Center"][1],
                             'Anchorage VAMC ECases': DataSet["Anchorage VA Medical Center"][2],
                             'Anchorage VAMC NewECases': DataSet["Anchorage VA Medical Center"][3],
-                            
+
+                            #Boise (BO)
+                            'Boise VAMC TotalSumCases': DataSet["Boise VA Medical Center"][0],
+                            'Boise VAMC NewSumCases': DataSet["Boise VA Medical Center"][1],
+                            'Boise VAMC ECases': DataSet["Boise VA Medical Center"][2],
+                            'Boise VAMC NewECases': DataSet["Boise VA Medical Center"][3],
+
                             #Portland (PO)
                             'Portland VAMC TotalSumCases': DataSet["Portland VA Medical Center"][0],
                             'Portland VAMC NewSumCases': DataSet["Portland VA Medical Center"][1],
                             'Portland VAMC ECases': DataSet["Portland VA Medical Center"][2],
                             'Portland VAMC NewECases': DataSet["Portland VA Medical Center"][3],
                           
-                            #WCPAC (WC)
-                            'Las Vegas VAMC TotalSumCases': DataSet["North Las Vegas VA Medical Center"][0],
-                            'Las Vegas VAMC NewSumCases': DataSet["North Las Vegas VA Medical Center"][1],
-                            'Las Vegas VAMC ECases': DataSet["North Las Vegas VA Medical Center"][2],
-                            'Las Vegas VAMC NewECases': DataSet["North Las Vegas VA Medical Center"][3],
-                      
-                            #Walla Walla (WW)
-                            'Jonathan M. VAMC TotalSumCases': DataSet["Jonathan M. Wainwright Memorial VA Medical Center"][0],
-                            'Jonathan M. VAMC NewSumCases': DataSet["Jonathan M. Wainwright Memorial VA Medical Center"][1],
-                            'Jonathan M. VAMC ECases': DataSet["Jonathan M. Wainwright Memorial VA Medical Center"][2],
-                            'Jonathan M. VAMC NewECases': DataSet["Jonathan M. Wainwright Memorial VA Medical Center"][3],
-
+                           #Roseburg (RO)
+                            'Roseburg  VAMC TotalSumCases': DataSet["Roseburg VA Medical Center"][0],
+                            'Roseburg VAMC NewSumCases': DataSet["Roseburg VA Medical Center"][1],
+                            'Roseburg VAMC ECases': DataSet["Roseburg VA Medical Center"][2],
+                            'Roseburg VAMC NewECases': DataSet["Roseburg VA Medical Center"][3],
 
                             #White City
                             'White City VAMC TotalSumCases': DataSet["White City VA Medical Center"][0],
                             'White City VAMC NewSumCases': DataSet["White City VA Medical Center"][1],
                             'White City VAMC ECases': DataSet["White City VA Medical Center"][2],
                             'White City VAMC NewECases': DataSet["White City VA Medical Center"][3],
-                  
-                            #Roseburg (RO)
-                            'Roseburg  VAMC TotalSumCases': DataSet["Roseburg VA Medical Center"][0],
-                            'Roseburg VAMC NewSumCases': DataSet["Roseburg VA Medical Center"][1],
-                            'Roseburg VAMC ECases': DataSet["Roseburg VA Medical Center"][2],
-                            'Roseburg VAMC NewECases': DataSet["Roseburg VA Medical Center"][3],
-                
+
                             #Puget Sound (PS)
                             'Seattle VAMC TotalSumCases': DataSet["Seattle VA Medical Center"][0],
                             'Seattle VAMC NewSumCases': DataSet["Seattle VA Medical Center"][1],
                             'Seattle VAMC ECases': DataSet["Seattle VA Medical Center"][2],
                             'Seattle VAMC NewECases': DataSet["Seattle VA Medical Center"][3],
-                
+
                             #Mann-Grandstaff (MG)
                             'Mann-Grandstaff VAMC TotalSumCases': DataSet["Mann-Grandstaff Department of Veterans Affairs Medical Center"][0],
                             'Mann-Grandstaff VAMC NewSumCases': DataSet["Mann-Grandstaff Department of Veterans Affairs Medical Center"][1],
                             'Mann-Grandstaff VAMC ECases': DataSet["Mann-Grandstaff Department of Veterans Affairs Medical Center"][2],
                             'Mann-Grandstaff VAMC NewECases': DataSet["Mann-Grandstaff Department of Veterans Affairs Medical Center"][3],
-                  
-                            #Boise (BO)
-                            'Boise VAMC TotalSumCases': DataSet["Boise VA Medical Center"][0],
-                            'Boise VAMC NewSumCases': DataSet["Boise VA Medical Center"][1],
-                            'Boise VAMC ECases': DataSet["Boise VA Medical Center"][2],
-                            'Boise VAMC NewECases': DataSet["Boise VA Medical Center"][3],
-                      
+
+                            #Walla Walla (WW)
+                            'Jonathan M. VAMC TotalSumCases': DataSet["Jonathan M. Wainwright Memorial VA Medical Center"][0],
+                            'Jonathan M. VAMC NewSumCases': DataSet["Jonathan M. Wainwright Memorial VA Medical Center"][1],
+                            'Jonathan M. VAMC ECases': DataSet["Jonathan M. Wainwright Memorial VA Medical Center"][2],
+                            'Jonathan M. VAMC NewECases': DataSet["Jonathan M. Wainwright Memorial VA Medical Center"][3],
+                                                                                                                                                                                                                                      
                             #Jesse Brown (JE)
                             'Jesse Brown VAMC TotalSumCases': DataSet["Jesse Brown Department of Veterans Affairs Medical Center"][0],
                             'Jesse Brown VAMC NewSumCases': DataSet["Jesse Brown Department of Veterans Affairs Medical Center"][1],
                             'Jesse Brown VAMC ECases': DataSet["Jesse Brown Department of Veterans Affairs Medical Center"][2],
                             'Jesse Brown VAMC NewECases': DataSet["Jesse Brown Department of Veterans Affairs Medical Center"][3],
-                          
-                            #William S. Middleton Memorial (WM)
-                            'William S. VAMC TotalSumCases': DataSet['William S. Middleton Memorial Veterans\' Hospital'][0],
-                            'William S. VAMC NewSumCases': DataSet['William S. Middleton Memorial Veterans\' Hospital'][1],
-                            'William S. VAMC ECases': DataSet['William S. Middleton Memorial Veterans\' Hospital'][2],
-                            'William S. VAMC NewECases': DataSet['William S. Middleton Memorial Veterans\' Hospital'][3],
-                           
+
+                           #Danville (DN)
+                            'Danville VAMC TotalSumCases' : DataSet["Danville VA Medical Center"][0], 
+                            'Danville VAMC NewSumCases' : DataSet["Danville VA Medical Center"][1], 
+                            'Danville VAMC ECases' : DataSet["Danville VA Medical Center"][2], 
+                            'Danville VAMC NewECases' : DataSet["Danville VA Medical Center"][3],
+
                             #Clement J. Zablocki (CZ)
                             'Clement J. VAMC TotalSumCases': DataSet['Clement J. Zablocki Veterans\' Administration Medical Center'][0],
                             'Clement J. VAMC NewSumCases': DataSet['Clement J. Zablocki Veterans\' Administration Medical Center'][1],
                             'Clement J. VAMC ECases': DataSet['Clement J. Zablocki Veterans\' Administration Medical Center'][2],
                             'Clement J. VAMC NewECases': DataSet['Clement J. Zablocki Veterans\' Administration Medical Center'][3],
-                 
-                            #Oscar G. Johnson (OJ)
-                            'Oscar G. VAMC TotalSumCases': DataSet["Oscar G. Johnson Department of Veterans Affairs Medical Facility"][0],
-                            'Oscar G. VAMC NewSumCases': DataSet["Oscar G. Johnson Department of Veterans Affairs Medical Facility"][1],
-                            'Oscar G. VAMC ECases': DataSet["Oscar G. Johnson Department of Veterans Affairs Medical Facility"][2],
-                            'Oscar G. VAMC NewECases': DataSet["Oscar G. Johnson Department of Veterans Affairs Medical Facility"][3],
-                
-                            #Ann Arbor (AA)
-                            'Lieutenant Colonel Charles S. VAMC TotalSumCases': DataSet["Lieutenant Colonel Charles S. Kettles VA Medical Center"][0],
-                            'Lieutenant Colonel Charles S. VAMC NewSumCases': DataSet["Lieutenant Colonel Charles S. Kettles VA Medical Center"][1],
-                            'Lieutenant Colonel Charles S. VAMC ECases': DataSet["Lieutenant Colonel Charles S. Kettles VA Medical Center"][2],
-                            'Lieutenant Colonel Charles S. VAMC NewECases': DataSet["Lieutenant Colonel Charles S. Kettles VA Medical Center"][3],
-                      
-                            #Battle Creek (BC)
-                            'Battle Creek VAMC TotalSumCases': DataSet["Battle Creek VA Medical Center"][0],
-                            'Battle Creek VAMC NewSumCases': DataSet["Battle Creek VA Medical Center"][1],
-                            'Battle Creek VAMC ECases': DataSet["Battle Creek VA Medical Center"][2],
-                            'Battle Creek VAMC NewECases': DataSet["Battle Creek VA Medical Center"][3],
-                 
-                            #Detroit (DE)
-                            'John D. Dingell VAMC TotalSumCases': DataSet["John D. Dingell Department of Veterans Affairs Medical Center"][0],
-                            'John D. Dingell VAMC NewSumCases': DataSet["John D. Dingell Department of Veterans Affairs Medical Center"][1],
-                            'John D. Dingell VAMC ECases': DataSet["John D. Dingell Department of Veterans Affairs Medical Center"][2],
-                            'John D. Dingell VAMC NewECases': DataSet["John D. Dingell Department of Veterans Affairs Medical Center"][3],
-                            
-                            #Saginaw (SA)
-                            'Aleda E. VAMC TotalSumCases' : DataSet["Aleda E. Lutz Department of Veterans Affairs Medical Center"][0], 
-                            'Aleda E. VAMC NewSumCases' : DataSet["Aleda E. Lutz Department of Veterans Affairs Medical Center"][1], 
-                            'Aleda E. VAMC ECases' : DataSet["Aleda E. Lutz Department of Veterans Affairs Medical Center"][2], 
-                            'Aleda E. VAMC NewECases' : DataSet["Aleda E. Lutz Department of Veterans Affairs Medical Center"][3], 
-                            
+
                             #Fort Wayne (FW)
                             'Fort Wayne VAMC TotalSumCases' : DataSet["Fort Wayne VA Medical Center"][0], 
                             'Fort Wayne VAMC NewSumCases' : DataSet["Fort Wayne VA Medical Center"][1], 
                             'Fort Wayne VAMC ECases' : DataSet["Fort Wayne VA Medical Center"][2], 
-                            'Fort Wayne VAMC NewECases' : DataSet["Fort Wayne VA Medical Center"][3],
+                            'Fort Wayne VAMC NewECases' : DataSet["Fort Wayne VA Medical Center"][3],   
+
+                            #Indianapolis (IN)
+                            'Richard L. VAMC TotalSumCases' : DataSet["Richard L. Roudebush Veterans\' Administration Medical Center"][0], 
+                            'Richard L. VAMC NewSumCases' : DataSet["Richard L. Roudebush Veterans\' Administration Medical Center"][1], 
+                            'Richard L. VAMC ECases' : DataSet["Richard L. Roudebush Veterans\' Administration Medical Center"][2], 
+                            'Richard L. VAMC NewECases' : DataSet["Richard L. Roudebush Veterans\' Administration Medical Center"][3],
 
                             #Marion (MA)
                             'Marion VAMC TotalSumCases' : DataSet["Marion VA Medical Center"][0], 
@@ -380,11 +356,29 @@ def CCTPull(CountyVACOVID):
                             'Marion VAMC ECases' : DataSet["Marion VA Medical Center"][2], 
                             'Marion VAMC NewECases' : DataSet["Marion VA Medical Center"][3], 
 
-                            #Indianapolis (IN)
-                            'Richard L. VAMC TotalSumCases' : DataSet["Richard L. Roudebush Veterans\' Administration Medical Center"][0], 
-                            'Richard L. VAMC NewSumCases' : DataSet["Richard L. Roudebush Veterans\' Administration Medical Center"][1], 
-                            'Richard L. VAMC ECases' : DataSet["Richard L. Roudebush Veterans\' Administration Medical Center"][2], 
-                            'Richard L. VAMC NewECases' : DataSet["Richard L. Roudebush Veterans\' Administration Medical Center"][3],
+                             #Ann Arbor (AA)
+                            'Lieutenant Colonel Charles S. VAMC TotalSumCases': DataSet["Lieutenant Colonel Charles S. Kettles VA Medical Center"][0],
+                            'Lieutenant Colonel Charles S. VAMC NewSumCases': DataSet["Lieutenant Colonel Charles S. Kettles VA Medical Center"][1],
+                            'Lieutenant Colonel Charles S. VAMC ECases': DataSet["Lieutenant Colonel Charles S. Kettles VA Medical Center"][2],
+                            'Lieutenant Colonel Charles S. VAMC NewECases': DataSet["Lieutenant Colonel Charles S. Kettles VA Medical Center"][3],
+
+                            #Battle Creek (BC)
+                            'Battle Creek VAMC TotalSumCases': DataSet["Battle Creek VA Medical Center"][0],
+                            'Battle Creek VAMC NewSumCases': DataSet["Battle Creek VA Medical Center"][1],
+                            'Battle Creek VAMC ECases': DataSet["Battle Creek VA Medical Center"][2],
+                            'Battle Creek VAMC NewECases': DataSet["Battle Creek VA Medical Center"][3],
+                            
+                             #Detroit (DE)
+                            'John D. Dingell VAMC TotalSumCases': DataSet["John D. Dingell Department of Veterans Affairs Medical Center"][0],
+                            'John D. Dingell VAMC NewSumCases': DataSet["John D. Dingell Department of Veterans Affairs Medical Center"][1],
+                            'John D. Dingell VAMC ECases': DataSet["John D. Dingell Department of Veterans Affairs Medical Center"][2],
+                            'John D. Dingell VAMC NewECases': DataSet["John D. Dingell Department of Veterans Affairs Medical Center"][3],
+
+                            #Tomah (TO)
+                            'Tomah VAMC TotalSumCases' : DataSet["Tomah VA Medical Center"][0],
+                            'Tomah VAMC NewSumCases' : DataSet["Tomah VA Medical Center"][1],
+                            'Tomah VAMC ECases' : DataSet["Tomah VA Medical Center"][2],
+                            'Tomah VAMC NewECases' : DataSet["Tomah VA Medical Center"][3],
 
                             #Chillicothe (CH)
                             'Chillicothe VAMC TotalSumCases' : DataSet["Chillicothe VA Medical Center"][0],
@@ -403,19 +397,38 @@ def CCTPull(CountyVACOVID):
                             'Louis Stokes VAMC NewSumCases' : DataSet["Louis Stokes Cleveland Department of Veterans Affairs Medical Center"][1], 
                             'Louis Stokes VAMC ECases' : DataSet["Louis Stokes Cleveland Department of Veterans Affairs Medical Center"][2], 
                             'Louis Stokes VAMC NewECases' : DataSet["Louis Stokes Cleveland Department of Veterans Affairs Medical Center"][3],
-                            
+
+                            #Columbus (CO) (Hard-Coded)
+
+                            'Columbus VAMC TotalSumCases' : DataSet["Columbus VA Medical Center"][0],
+                            'Columbus VAMC NewSumCases' : DataSet["Columbus VA Medical Center"][1],
+                            'Columbus VAMC ECases' : DataSet["Columbus VA Medical Center"][2],
+                            'Columbus VAMC NewECases' : DataSet["Columbus VA Medical Center"][3],\
+
                             #Dayton (DA)
                             'Dayton VAMC TotalSumCases' : DataSet["Dayton VA Medical Center"][0],
                             'Dayton VAMC NewSumCases' : DataSet["Dayton VA Medical Center"][1],
                             'Dayton VAMC ECases' : DataSet["Dayton VA Medical Center"][2],
                             'Dayton VAMC NewECases' : DataSet["Dayton VA Medical Center"][3],
+
+                            #William S. Middleton Memorial (WM)
+                            'William S. VAMC TotalSumCases': DataSet['William S. Middleton Memorial Veterans\' Hospital'][0],
+                            'William S. VAMC NewSumCases': DataSet['William S. Middleton Memorial Veterans\' Hospital'][1],
+                            'William S. VAMC ECases': DataSet['William S. Middleton Memorial Veterans\' Hospital'][2],
+                            'William S. VAMC NewECases': DataSet['William S. Middleton Memorial Veterans\' Hospital'][3],
+
+                            #Oscar G. Johnson (OJ)
+                            'Oscar G. VAMC TotalSumCases': DataSet["Oscar G. Johnson Department of Veterans Affairs Medical Facility"][0],
+                            'Oscar G. VAMC NewSumCases': DataSet["Oscar G. Johnson Department of Veterans Affairs Medical Facility"][1],
+                            'Oscar G. VAMC ECases': DataSet["Oscar G. Johnson Department of Veterans Affairs Medical Facility"][2],
+                            'Oscar G. VAMC NewECases': DataSet["Oscar G. Johnson Department of Veterans Affairs Medical Facility"][3],                                                                                                                                         
                             
-                            #Danville (DN)
-                            'Danville VAMC TotalSumCases' : DataSet["Danville VA Medical Center"][0], 
-                            'Danville VAMC NewSumCases' : DataSet["Danville VA Medical Center"][1], 
-                            'Danville VAMC ECases' : DataSet["Danville VA Medical Center"][2], 
-                            'Danville VAMC NewECases' : DataSet["Danville VA Medical Center"][3], 
-                            
+                            #Saginaw (SA)
+                            'Aleda E. VAMC TotalSumCases' : DataSet["Aleda E. Lutz Department of Veterans Affairs Medical Center"][0], 
+                            'Aleda E. VAMC NewSumCases' : DataSet["Aleda E. Lutz Department of Veterans Affairs Medical Center"][1], 
+                            'Aleda E. VAMC ECases' : DataSet["Aleda E. Lutz Department of Veterans Affairs Medical Center"][2], 
+                            'Aleda E. VAMC NewECases' : DataSet["Aleda E. Lutz Department of Veterans Affairs Medical Center"][3], 
+
                             #Hines (HN)
                             'Edward Hines VAMC TotalSumCases' : DataSet["Edward Hines Junior Hospital"][0], 
                             'Edward Hines VAMC NewSumCases' : DataSet["Edward Hines Junior Hospital"][1], 
@@ -427,19 +440,6 @@ def CCTPull(CountyVACOVID):
                             'Captain James A. VAMC NewSumCases' : DataSet["Captain James A. Lovell Federal Health Care Center"][1], 
                             'Captain James A. VAMC ECases' : DataSet["Captain James A. Lovell Federal Health Care Center"][2], 
                             'Captain James A. VAMC NewECases' : DataSet["Captain James A. Lovell Federal Health Care Center"][3], 
-                            
-                            #Tomah (TO)
-                            'Tomah VAMC TotalSumCases' : DataSet["Tomah VA Medical Center"][0],
-                            'Tomah VAMC NewSumCases' : DataSet["Tomah VA Medical Center"][1],
-                            'Tomah VAMC ECases' : DataSet["Tomah VA Medical Center"][2],
-                            'Tomah VAMC NewECases' : DataSet["Tomah VA Medical Center"][3],
-                            
-                            #Columbus (CO) (Hard-Coded)
-
-                            'Columbus VAMC TotalSumCases' : DataSet["Columbus VA Medical Center"][0],
-                            'Columbus VAMC NewSumCases' : DataSet["Columbus VA Medical Center"][1],
-                            'Columbus VAMC ECases' : DataSet["Columbus VA Medical Center"][2],
-                            'Columbus VAMC NewECases' : DataSet["Columbus VA Medical Center"][3],
 
                             #Colmery
                             'Colmery VAMC TotalSumCases' : DataSet["Colmery-O'Neil Veterans' Administration Medical Center"][0],
